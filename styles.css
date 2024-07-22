@@ -5,7 +5,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
+    
+        background: transparent; /* جعل الخلفية شفافة */
+
     overflow: hidden;
 }
 
@@ -14,6 +16,9 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
+       z-index: 0; /* ضبط z-index أقل من glass-container */
+ 
 }
 
 .stars {
@@ -29,7 +34,7 @@ body, html {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 22px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
@@ -169,17 +174,6 @@ button:hover {
     animation: slideDownUp 3s ease; /* Apply the sliding animation */
 }
 
-/* Animation when loading the page */
-@keyframes fadeInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 body {
     animation: fadeInFromTop 2s ease-out;
