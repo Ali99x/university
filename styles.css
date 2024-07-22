@@ -174,3 +174,25 @@ button:hover {
 body {
     animation: fadeInFromTop 2s ease-out;
 }
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+   
+    color: #fff; /* لون النص */
+    text-align: center;
+    padding: 10px 0; /* الحواف العليا والسفلية */
+    font-size: 14px; /* حجم الخط */
+}
+
+footer a {
+    color: #ffcc00; /* لون الرابط */
+    text-decoration: none; /* إزالة الخط السفلي من الرابط */
+}
+
+footer a:hover {
+    text-decoration: underline; /* إضافة خط سفلي عند التمرير فوق الرابط */
+}
