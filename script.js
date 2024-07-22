@@ -7,6 +7,7 @@ canvas.height = window.innerHeight;
 
 let stars = [];
 let numStars = 100;
+const starSpeed = 0.7; // قيمة أقل تعني حركة أبطأ
 
 function initStars() {
     for (let i = 0; i < numStars; i++) {
@@ -21,7 +22,7 @@ function initStars() {
 function moveStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < stars.length; i++) {
-        stars[i].z -= 2;
+        stars[i].z -= starSpeed; // استخدم المتغير للتحكم في السرعة
         if (stars[i].z <= 0) {
             stars[i].z = canvas.width;
         }
@@ -45,6 +46,7 @@ function moveStars() {
 
 initStars();
 moveStars();
+
 
 
 // Sample data
@@ -972,7 +974,7 @@ function displayGrades() {
         document.getElementById('parallel-grade').textContent = `معدل باراليل: ${grades.parallel}`;
         
         // Display the notification with the selected department
-        showNotification(`تم اختيار : ${department}`);
+        showNotification(`تم اختيار قسم: ${department}`);
         
         // Add fade-in animation class for visual feedback
         const resultDiv = document.getElementById('result');
