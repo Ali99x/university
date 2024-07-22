@@ -28,12 +28,22 @@ body, html {
     z-index: 1;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 20px;
+    padding: 22px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
+        margin-bottom: 20px; /* المسافة بين الفوتر والمحتوى الذي فوقه */
+            direction: rtl; /* اتجاه النصوص بشكل عام من اليمين لليسار */
 }
+.glass-container label,
+
+.glass-container p {
+    margin: 1px 0; /* تقليص المسافة بين العناصر الداخلية */
+    padding: 1px; /* تقليص المسافة الداخلية للعناصر */
+}
+
+
 
 h1 {
     color: #fff;
@@ -181,7 +191,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-   
+
     color: #fff; /* لون النص */
     text-align: center;
     padding: 10px 0; /* الحواف العليا والسفلية */
