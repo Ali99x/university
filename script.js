@@ -420,7 +420,9 @@ const data = {
                 "جيولوجي": { zankoline: 64.7, parallel: 61.2 },
                 "فيزياء": { zankoline: 73.8, parallel: 67.8 },
                 "رياضيات": { zankoline: 71.0, parallel: 65.0 },
-                "كيمياء": { zankoline: 81.4, parallel: 75.6 }
+                "كيمياء": { zankoline: 81.4, parallel: 75.6 },
+                 "احياء": { zankoline: 84.2, parallel: 78.2 },
+                "كومبيوتر": { zankoline: 78.7, parallel: 72.7 }
             },
             "كلية العلوم والهندسة الزراعية": {
                 "المحاصيل الحقلية": { zankoline: 58.7, parallel: 53.6 },
