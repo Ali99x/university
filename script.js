@@ -190,7 +190,7 @@ const data = {
                 'محاسبة': { zankoline: 57.6, parallel: 55.8 },
                 'تقنية معلومات أي تي': { zankoline: 64.4, parallel: 59.2 }
             },
-            'كلية المعهد التقني – جمجمال': {
+            ' المعهد التقني – جمجمال': {
                 'تقني كهرباء': { zankoline: 60, parallel: 55.3 },
                 'تقنية المعلومات': { zankoline: 62.6, parallel: 58.9 },
                 'إدارة أعمال': { zankoline: 60.1, parallel: 58.7 }
@@ -664,7 +664,7 @@ const data = {
             "إدارة أعمال – دبلوم": { zankoline: 58.9, parallel: 57.2 },
             "محاسبة – دبلوم سنتان فقط": { zankoline: 57.4, parallel: 56.6 }
         },
-        "كلية المعهد التقني – خةبات": {
+        " المعهد التقني – خةبات": {
             "أمن الغذاء وتحكم بالجودة": { zankoline: 0.0, parallel: 53.9 },
             "إدارة قانونية": { zankoline: 58.5, parallel: 57.4 },
             "حماية النبات": { zankoline: 0.0, parallel: 54.7 },
@@ -682,7 +682,7 @@ const data = {
             "التمريض": { zankoline: 69.7, parallel: 66.4 },
             "إدارة الأعمال": { zankoline: 60.0, parallel: 55.9 }
         },
-        "كلية المعهد التقني – جومان": {
+        " المعهد التقني – جومان": {
             "إدارة مالية": { zankoline: 57.3, parallel: 55.6 },
             "تقنية المعلومات أي تي": { zankoline: 59.1, parallel: 55.8 },
             "إدارة الأعمال": { zankoline: 60.0, parallel: 56.1 }
@@ -835,7 +835,7 @@ const data = {
             "لغة كوردية": { zankoline: 62, parallel: 57.7 },
             "لغة إنكليزية": { zankoline: 72.9, parallel: 67.8 },
             "تاريخ": { zankoline: 64.7, parallel: 60.6 },
-            "جغرافيا": { zankoline: 64.4 },
+            "جغرافيا": { zankoline: 64.4, parallel: 59.4},
             "تربية دينية": { zankoline: 57, parallel: 54.5 },
             "تربية و علم النفس": { zankoline: 64.4, parallel: 59.2 }
         }
