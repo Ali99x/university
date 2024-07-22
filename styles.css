@@ -186,6 +186,57 @@ body {
 }
 
 
+
+
+/* أسلوب جديد لزر القائمة */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+}
+
+/* أسلوب القائمة الجانبية */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* تبدأ القائمة مخفية */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.side-menu.open {
+    right: 0; /* عند فتح القائمة، تظهر من اليمين */
+}
+
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+.side-menu button:hover {
+    background-color: #555;
+}
+
+
+
+
+
 footer {
     position: fixed;
     bottom: 0;
