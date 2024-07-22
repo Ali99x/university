@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="stars"></div>
+    </div>
+    <div class="glass-container">
+        <h1>اختر المدينة، الجامعة، الكلية والقسم</h1>
+        <label for="city">المدينة</label>
+        <select id="city" onchange="updateUniversities()">
+            <option value="">اختر مدينة</option>
+            <option value="sulaymaniyah">السليمانية</option>
+            <option value="Duhok">دهوك</option>
+            <!-- إضافة المزيد من المدن هنا -->
+        </select>
+        <label for="university">الجامعة</label>
+        <select id="university" onchange="updateColleges()">
+            <option value="">اختر جامعة</option>
+        </select>
+        <label for="college">الكلية</label>
+        <select id="college" onchange="updateDepartments()">
+            <option value="">اختر كلية</option>
+        </select>
+        <label for="department">القسم</label>
+        <select id="department" onchange="displayGrades()">
+            <option value="">اختر قسم</option>
+        </select>
+        <div id="result">
+            <p id="zankoline-grade"></p>
+            <p id="parallel-grade"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
