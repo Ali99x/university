@@ -40,6 +40,25 @@ h1 {
     margin-bottom: 20px;
 }
 
+
+p {
+ font-weight: bold;
+  color: white;
+}
+
+
+h2 {
+    color: #ff2ea4; /* اللون الأصفر */
+    font-size: 14px; /* حجم الخط أصغر */
+    background: rgba(0, 0, 0, 0.1); /* خلفية خفيفة */
+    padding: 10px; /* إضافة حواف للعنوان */
+    border-radius: 5px; /* زوايا دائرية للخلفية */
+    margin-bottom: 15px; /* مسافة سفلية */
+      margin-top: 0px; /* مسافة سفلية */
+}
+
+
+
 label {
     display: block;
     color: #fff;
