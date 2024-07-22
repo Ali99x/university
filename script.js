@@ -145,6 +145,7 @@ function updateDepartments() {
 }
 
 // Function to display grades based on the selected department
+// Function to display grades based on the selected department
 function displayGrades() {
     const city = document.getElementById('city').value;
     const university = document.getElementById('university').value;
@@ -155,6 +156,9 @@ function displayGrades() {
         const grades = data[city][university][college][department];
         document.getElementById('zankoline-grade').textContent = `معدل زانكولاين: ${grades.zankoline}`;
         document.getElementById('parallel-grade').textContent = `معدل باراليل: ${grades.parallel}`;
+        
+        // Display the notification with the selected department
+        showNotification(`تم اختيار قسم: ${department}`);
         
         // Add fade-in animation class for visual feedback
         const resultDiv = document.getElementById('result');
@@ -170,14 +174,19 @@ function displayGrades() {
 function showNotification(message) {
     const notification = document.getElementById('notification');
     notification.textContent = message;
-    notification.classList.add('show');
+    notification.classList.add('show'); // Add class to start the animation
+
+    // Remove the class after animation ends
     setTimeout(() => {
         notification.classList.remove('show');
-    }, 3000);
+    }, 3000); // Duration of the animation
 }
+
+
 
 // Add event listeners
 document.getElementById('city').addEventListener('change', updateUniversities);
 document.getElementById('university').addEventListener('change', updateColleges);
 document.getElementById('college').addEventListener('change', updateDepartments);
 document.getElementById('department').addEventListener('change', displayGrades);
+
