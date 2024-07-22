@@ -33,7 +33,7 @@ body, html {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-        margin-bottom: 20px; /* المسافة بين الفوتر والمحتوى الذي فوقه */
+        margin-bottom: 16px; /* المسافة بين الفوتر والمحتوى الذي فوقه */
             direction: rtl; /* اتجاه النصوص بشكل عام من اليمين لليسار */
 }
 .glass-container label,
