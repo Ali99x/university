@@ -1046,10 +1046,42 @@ function openPage(url) {
 
 
 
+  document.addEventListener("DOMContentLoaded", function() {
+            const passwordInput = document.getElementById("password");
+            const rememberMeCheckbox = document.getElementById("rememberMe");
+            const notification = document.getElementById("notification");
 
+            // استرجاع حالة "تذكرني" وكلمة المرور من localStorage إذا كانت موجودة
+            if (localStorage.getItem("rememberMe") === "true") {
+                passwordInput.value = localStorage.getItem("password") || "";
+                rememberMeCheckbox.checked = true;
+            }
 
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // منع إرسال النموذج افتراضيًا
 
+                const password = passwordInput.value;
 
+                // إذا كان الخيار "تذكرني" مفعلًا، قم بتخزين كلمة المرور
+                if (rememberMeCheckbox.checked) {
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("rememberMe", "true");
+                } else {
+                    localStorage.removeItem("password");
+                    localStorage.setItem("rememberMe", "false");
+                }
+
+                // إذا كانت كلمة المرور صحيحة، أغلق مربع تسجيل الدخول
+                if (password === "ali") {
+                    document.querySelector(".overlay").style.display = "none";
+                } else {
+                    // عرض رسالة خطأ
+                    notification.textContent = "كلمة المرور غير صحيحة";
+                    notification.classList.add("show");
+                    setTimeout(() => notification.classList.remove("show"), 3000); // إزالة الرسالة بعد 3 ثوانٍ
+                }
+            });
+        });
 
 
 
