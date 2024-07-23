@@ -7,9 +7,10 @@ canvas.height = window.innerHeight;
 
 let stars = [];
 let numStars = 100;
-const starSpeed = 0.7; // قيمة أقل تعني حركة أبطأ
+const starSpeed = 0.7;
 
 function initStars() {
+    stars = []; // إعادة تعيين النجوم لتجنب تراكمها
     for (let i = 0; i < numStars; i++) {
         stars.push({
             x: Math.random() * canvas.width,
@@ -22,7 +23,7 @@ function initStars() {
 function moveStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < stars.length; i++) {
-        stars[i].z -= starSpeed; // استخدم المتغير للتحكم في السرعة
+        stars[i].z -= starSpeed;
         if (stars[i].z <= 0) {
             stars[i].z = canvas.width;
         }
@@ -34,7 +35,7 @@ function moveStars() {
         if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
             const size = (1 - stars[i].z / canvas.width) * 5;
             const shade = parseInt((1 - stars[i].z / canvas.width) * 255);
-            ctx.fillStyle = `rgb(${shade}, ${shade}, 255)`; // Blueish stars
+            ctx.fillStyle = `rgb(${shade}, ${shade}, 255)`;
             ctx.beginPath();
             ctx.arc(px, py, size, 0, Math.PI * 2);
             ctx.fill();
@@ -47,6 +48,11 @@ function moveStars() {
 initStars();
 moveStars();
 
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initStars(); // إعادة تهيئة النجوم عند تغيير حجم النافذة
+});
 
 
 // Sample data
