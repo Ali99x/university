@@ -5,9 +5,6 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-        background: transparent; /* جعل الخلفية شفافة */
-
     overflow: hidden;
 }
 
@@ -17,8 +14,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-       z-index: 0; /* ضبط z-index أقل من glass-container */
- 
+    z-index: 0;
 }
 
 .stars {
@@ -125,6 +121,7 @@ button:hover {
     }
 }
 
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -134,36 +131,32 @@ button:hover {
     }
 }
 
-
-/* CSS for notification */
 .notification {
     position: fixed;
-    top: -100px; /* Start position above the viewport */
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 15px 40px;
     border-radius: 8px;
     font-size: 18px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    transition: top 0.5s ease; /* Smooth transition for sliding effect */
-        backdrop-filter: blur(3px); /* Apply the blur effect */
-
+    z-index: 1009;
+    transition: top 0.5s ease;
+ 
 }
 
-/* Animation for the notification */
 @keyframes slideDownUp {
     0% {
         top: -100px;
     }
     20% {
-        top: 20px; /* Position the notification slightly below the top */
+        top: 20px;
     }
     80% {
-        top: 20px; /* Keep it visible for a moment */
+        top: 20px;
     }
     100% {
         top: -100px;
@@ -171,18 +164,13 @@ button:hover {
 }
 
 .notification.show {
-    animation: slideDownUp 3s ease; /* Apply the sliding animation */
+    animation: slideDownUp 3s ease;
 }
-
 
 body {
     animation: fadeInFromTop 2s ease-out;
 }
 
-
-
-
-/* أسلوب جديد لزر القائمة */
 .menu-button {
     position: fixed;
     top: 20px;
@@ -193,11 +181,10 @@ body {
     color: white;
 }
 
-/* أسلوب القائمة الجانبية */
 .side-menu {
     position: fixed;
     top: 0;
-    right: -250px; /* تبدأ القائمة مخفية */
+    right: -250px;
     width: 250px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
@@ -207,7 +194,7 @@ body {
 }
 
 .side-menu.open {
-    right: 0; /* عند فتح القائمة، تظهر من اليمين */
+    right: 0;
 }
 
 .side-menu button {
@@ -227,28 +214,150 @@ body {
     background-color: #555;
 }
 
-
-
-
-
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-
-    color: #fff; /* لون النص */
+    color: #fff;
     text-align: center;
-    padding: 10px 0; /* الحواف العليا والسفلية */
-    font-size: 14px; /* حجم الخط */
+    padding: 10px 0;
+    font-size: 14px;
 }
 
 footer a {
-    color: #ffcc00; /* لون الرابط */
-    text-decoration: none; /* إزالة الخط السفلي من الرابط */
+    color: #ffcc00;
+    text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* إضافة خط سفلي عند التمرير فوق الرابط */
-     color: #1890db;
+    text-decoration: underline;
+    color: #1890db;
 }
+
+/* الخلفية الضبابية */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1008;
+}
+
+/* تحسين تنسيق نموذج تسجيل الدخول */
+.login-form {
+    position: fixed; /* تأكيد على التثبيت فوق كل العناصر */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* توسيط النموذج */
+    z-index: 1001; /* تأكيد أن النموذج فوق كل العناصر */
+    background: rgba(0, 0, 0);
+    border-radius: 12px;
+    padding: 18px;
+   
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: auto;
+    width: 250px; /* عرض ثابت لنموذج تسجيل الدخول */
+    margin: 0 auto; /* توسيط النموذج */
+    direction: rtl; /* اتجاه النصوص بشكل عام من اليمين لليسار */
+}
+
+
+.login-form h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px; /* حجم أكبر لعنوان النموذج */
+     text-align: center;
+}
+
+.login-form label {
+    display: block;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px; /* حجم خط أكبر للتسمية */
+}
+
+.login-form input[type="password"] {
+    width: calc(100% - 20px); /* عرض الحقل مع هامش */
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-size: 16px; /* حجم خط مناسب */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 7px;
+}
+
+
+
+
+.login-form input[type="checkbox"] {
+    margin-left: 10px; /* مسافة بين الصندوق والنص */
+   
+} 
+
+
+
+/* تحسين مظهر الصندوق عند التحديد */
+.login-form input[type="checkbox"]:checked {
+    background-color: #5c0e3b; /* تغيير الخلفية عند التحديد */
+    border: 2px solid #5c0e3b; /* تأكيد الحدود عند التحديد */
+}
+
+
+
+
+
+
+
+
+
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    background-color: #5c0e3b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+     text-align: center;
+      display: block; /* التأكد من أن الزر يعرض ككتلة منفصلة */
+    text-align: center; /* توسيط النص داخل الزر */
+}
+
+.login-form button:hover {
+    background-color: #6e0e6c;
+}
+
+.login-form p {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #fff;
+     text-align: center;
+
+}
+
+
+.login-form a {
+    color: #ffcc00; /* لون مميز للرابط */
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+    color: #24abe0; /* لون أفتح عند التمرير فوق الرابط */
+}
+
