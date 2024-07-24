@@ -8,6 +8,20 @@ body, html {
     overflow: hidden;
 }
 
+
+    /* منع تحديد النصوص */
+body {
+    user-select: none; /* لجميع المتصفحات الحديثة */
+}
+
+/* خاصية لتصحيح عرض النصوص في بعض المتصفحات */
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* جميع المتصفحات الحديثة */
+}
+
 .background {
     position: absolute;
     width: 100%;
