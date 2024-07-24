@@ -92,6 +92,17 @@ const data = {
                 'المحاسبة': { zankoline: 69.2, parallel: 63.9 },
                 'إدارة التسويق': { zankoline: 65.9, parallel: 62.7 }
             },
+
+  'كلية التجارة': {
+                'ادارة المشاريع': { zankoline: 62.2, parallel: 60.9 },
+                'علوم مالية ومصرفية': { zankoline: 62.6, parallel: 58.9 },
+                'تجارة دولية': { zankoline: 67.5, parallel: 63.2 },
+                'تكنولوجيا المعلومات': { zankoline: 78.9, parallel: 75 },
+                'السياحة والسفر': { zankoline: 65, parallel: 58.7 }
+            },
+
+
+            
             'كلية اللغات': {
                 'اللغة الكوردية': { zankoline: 62.5, parallel: 57.3 },
                 'اللغة العربية': { zankoline: 66.5, parallel: 63.6 },
