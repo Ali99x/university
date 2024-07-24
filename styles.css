@@ -257,8 +257,8 @@ footer a:hover {
     left: 50%;
     transform: translate(-50%, -50%); /* توسيط النموذج */
     z-index: 1001; /* تأكيد أن النموذج فوق كل العناصر */
-    background: rgba(0, 0, 0);
-    border-radius: 12px;
+    background: rgba(250, 250, 250);
+    border-radius: 8px;
     padding: 18px;
    
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -271,7 +271,7 @@ footer a:hover {
 
 
 .login-form h1 {
-    color: #fff;
+    color: #000000;
     margin-bottom: 20px;
     font-size: 24px; /* حجم أكبر لعنوان النموذج */
      text-align: center;
@@ -279,7 +279,7 @@ footer a:hover {
 
 .login-form label {
     display: block;
-    color: #fff;
+    color: #000000;
     margin-top: 10px;
     font-size: 16px; /* حجم خط أكبر للتسمية */
 }
@@ -288,8 +288,8 @@ footer a:hover {
     width: calc(100% - 20px); /* عرض الحقل مع هامش */
     padding: 8px;
     border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    background: rgba(212, 212, 212, 0.9);
     color: black;
     font-size: 16px; /* حجم خط مناسب */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -327,7 +327,7 @@ footer a:hover {
     position: relative;
     border: none;
     border-radius: 4px;
-    background-color: #5c0e3b;
+    background-color:#142e85;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -339,7 +339,7 @@ footer a:hover {
 }
 
 .login-form button:hover {
-    background-color: #6e0e6c;
+    background-color: #09154f;
 }
 
 .login-form p {
@@ -352,7 +352,7 @@ footer a:hover {
 
 
 .login-form a {
-    color: #ffcc00; /* لون مميز للرابط */
+    color: #85145d; /* لون مميز للرابط */
     text-decoration: none;
 }
 
@@ -360,4 +360,3 @@ footer a:hover {
     text-decoration: underline;
     color: #24abe0; /* لون أفتح عند التمرير فوق الرابط */
 }
-
