@@ -66,11 +66,13 @@ h1 {
 }
 
 
-p {
- font-weight: bold;
-  color: white;
-}
+ p {
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+            margin-top: 2px;
 
+ }
 
 h2 {
     color: #ff2ea4; /* اللون الأصفر */
@@ -82,6 +84,12 @@ h2 {
       margin-top: 0px; /* مسافة سفلية */
 }
 
+h8 {
+
+  color: white;
+
+}
+
 
 
 label {
@@ -89,6 +97,7 @@ label {
     color: #fff;
     margin-top: 10px;
 }
+
 
 select {
     width: 100%;
@@ -150,7 +159,7 @@ button:hover {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: #fff;
     padding: 15px 40px;
     border-radius: 8px;
@@ -172,10 +181,14 @@ button:hover {
     80% {
         top: 20px;
     }
-    100% {
+    99% {
         top: -100px;
     }
+    100% {
+        top: -120px;
+    }
 }
+
 
 .notification.show {
     animation: slideDownUp 3s ease;
