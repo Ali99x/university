@@ -995,7 +995,7 @@ function displayGrades() {
         document.getElementById('parallel-grade').textContent = `معدل باراليل: ${grades.parallel}`;
         
         // Display the notification with the selected department
-        showNotification(`تم اختيار قسم: ${department}`);
+        showNotification(`${department}`);
         
         // Add fade-in animation class for visual feedback
         const resultDiv = document.getElementById('result');
