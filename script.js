@@ -83,7 +83,8 @@ const data = {
             },
             'كلية القانون': {
                 'قانون': { zankoline: 86.6, parallel: 82.5 },
-                'علوم سياسية': { zankoline: 64, parallel: 58.2 }
+                'سياسية وعلاقات دولية': { zankoline: 64, parallel:58.2 },
+                'علوم سياسية': { zankoline: 65, parallel: 59.8 }
             },
             'كلية الإدارة والاقتصاد': {
                 'اقتصاد': { zankoline: 69.9, parallel: 63.9 },
