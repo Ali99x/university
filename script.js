@@ -110,7 +110,7 @@ const data = {
                 'الترجمة': { zankoline: 77.5, parallel: 73.4 },
                 'اللغة الفارسية': { zankoline: 63.9, parallel: 59.5 }
             },
-            'كلية الآداب': {
+            'كلية الآداب والعلوم الانسانية': {
                 'آداب تاريخ': { zankoline: 61.3, parallel: 59.1 },
                 'آداب جغرافيا': { zankoline: 63.3, parallel: 60.4 },
                 'آداب علم الاجتماع': { zankoline: 62, parallel: 60.4 },
