@@ -393,6 +393,7 @@ const data = {
      'Duhok': {
         "جامعة دهوك": {
             "كلية الطب": {
+                "طب عام": { zankoline: 96, parallel: 95 },
                 "طب اسنان": { zankoline: 94.4, parallel: 93.71 },
                 "صيدلة": { zankoline: 93.9, parallel: 93.4 },
                 "طب بيطري": { zankoline: 79.1, parallel: 73.6 }
