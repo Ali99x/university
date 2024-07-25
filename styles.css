@@ -161,9 +161,9 @@ button:hover {
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
     color: #fff;
-    padding: 15px 40px;
+    padding: 15px ;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 1009;
