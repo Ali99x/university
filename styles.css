@@ -9,11 +9,11 @@ body, html {
 }
 
 
-#firstselection,
-#second,
-#third,
-#fourth {
-      -webkit-appearance: none;
+#city,
+#university,
+#college ,
+#department {
+    -webkit-appearance: none;
 }
 
     /* منع تحديد النصوص */
