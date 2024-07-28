@@ -214,7 +214,13 @@ body {
     cursor: pointer;
     z-index: 1009;
     color: white;
+    transition: transform 0.3s ease;
 }
+
+.menu-button.clicked {
+    transform: rotate(180deg) scale(1.1);
+}
+       
 
 .side-menu {
     position: fixed;
