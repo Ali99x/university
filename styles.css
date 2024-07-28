@@ -9,11 +9,12 @@ body, html {
 }
 
 
-#select {
-  -webkit-appearance: none;
-  color: black;
+#firstselection,
+#second,
+#third,
+#fourth {
+      -webkit-appearance: none;
 }
-
 
     /* منع تحديد النصوص */
 body {
