@@ -13,6 +13,7 @@ body, html {
 #university,
 #college ,
 #department {
+    color: black;
     -webkit-appearance: none;
 }
 
