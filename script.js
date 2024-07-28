@@ -983,6 +983,8 @@ function updateDepartments() {
 
 // Function to display grades based on the selected department
 // Function to display grades based on the selected department
+
+// Function to display grades based on the selected department
 function displayGrades() {
     const city = document.getElementById('city').value;
     const university = document.getElementById('university').value;
@@ -991,8 +993,23 @@ function displayGrades() {
 
     if (city && university && college && department && data[city][university][college][department]) {
         const grades = data[city][university][college][department];
-        document.getElementById('zankoline-grade').textContent = `معدل زانكولاين: ${grades.zankoline}`;
-        document.getElementById('parallel-grade').textContent = `معدل باراليل: ${grades.parallel}`;
+        
+        const zankolineGradeElement = document.getElementById('zankoline-grade');
+        const parallelGradeElement = document.getElementById('parallel-grade');
+        
+        // Set the text content
+        zankolineGradeElement.textContent = `معدل زانكولاين: ${grades.zankoline}`;
+        parallelGradeElement.textContent = `معدل باراليل: ${grades.parallel}`;
+        
+        // Add the blink-effect class
+        zankolineGradeElement.classList.add('blink-effect');
+        parallelGradeElement.classList.add('blink-effect');
+        
+        // Remove the blink-effect class after the animation ends
+        setTimeout(() => {
+            zankolineGradeElement.classList.remove('blink-effect');
+            parallelGradeElement.classList.remove('blink-effect');
+        }, 1000); // Duration of the blink effect animation
         
         // Display the notification with the selected department
         showNotification(`${department}`);
@@ -1006,6 +1023,12 @@ function displayGrades() {
         document.getElementById('parallel-grade').textContent = '';
     }
 }
+
+
+
+
+
+
 
 // Function to display a notification
 function showNotification(message) {
@@ -1117,6 +1140,10 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
+
+
+
+
 
 
 
