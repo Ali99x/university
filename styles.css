@@ -142,7 +142,7 @@ select {
 .dropdown::before {
     content: '▼'; /* Unicode character for down arrow */
     position: absolute;
-    top: 65%;
+    top: 66%;
     left: 15px; /* Adjust based on your design */
     transform: translateY(-50%);
     pointer-events: none; /* Ensure arrow doesn't interfere with clicking */
