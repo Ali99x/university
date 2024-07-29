@@ -128,9 +128,10 @@ select::-ms-expand {
     display: none;
 }
 /* ضبط مكان السهم على الشاشات الصغيرة */
-@media
+@media (max-width: 800px) {
     #info-select {
-        background-position: calc(100% - 80%) center; /* تعديل مكان الأيقونة للشاشات الصغيرة */
+        background: url('https://i.ibb.co/vkdXfMz/down-arrow.png') no-repeat;
+        background-position: right 10% center; /* تعديل موقع الأيقونة */
     }
 }
 
