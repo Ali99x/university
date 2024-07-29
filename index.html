@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-      <link rel="icon" href="https://i.ibb.co/gMjxk2Q/graduation-cap.png">
+    <link rel="icon" href="https://i.ibb.co/gMjxk2Q/graduation-cap.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>معدل الجامعات الحكومية</title>
+    <title>معدل الجامعات الحكومية</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,71 +12,83 @@
         <div class="stars"></div>
     </div>
     <div class="glass-container">
-<h1>معدلات الجامعات</h1>
-<h2>ان المعدلات افتراضية تعتمد السنة السابقة 23-24</h2>
-        <label for="city">المدينة</label>
-        <select id="city" onchange="updateUniversities()">
-            <option value="">اختر مدينة</option>
-            <option value="sulaymaniyah">السليمانية</option>
-            <option value="erbil">اربيل</option>
-            <option value="Duhok">دهوك</option>
-            <option value="Halabja">حلبجة</option>
-            <!-- إضافة المزيد من المدن هنا -->
-        </select>
-        <label for="university">الجامعة</label>
-        <select id="university" onchange="updateColleges()">
-            <option value="">اختر جامعة</option>
-        </select>
-        <label for="college">الكلية</label>
-        <select id="college" onchange="updateDepartments()">
-            <option value="">اختر كلية</option>
-        </select>
-        <label for="department">القسم</label>
-        <select id="department" onchange="displayGrades()">
-            <option value="">اختر قسم</option>
-        </select>
+        <h1>معدلات الجامعات</h1>
+        <h2>ان المعدلات افتراضية تعتمد السنة السابقة 23-24</h2>
+        
+        <div class="dropdown">
+            <label for="city">المدينة</label>
+            <select id="city" onchange="updateUniversities()">
+                <option value="">اختر مدينة</option>
+                <option value="sulaymaniyah">السليمانية</option>
+                <option value="erbil">اربيل</option>
+                <option value="Duhok">دهوك</option>
+                <option value="Halabja">حلبجة</option>
+                <!-- إضافة المزيد من المدن هنا -->
+            </select>
+        </div>
+        
+        <div class="dropdown">
+            <label for="university">الجامعة</label>
+            <select id="university" onchange="updateColleges()">
+                <option value="">اختر جامعة</option>
+            </select>
+        </div>
+        
+        <div class="dropdown">
+            <label for="college">الكلية</label>
+            <select id="college" onchange="updateDepartments()">
+                <option value="">اختر كلية</option>
+            </select>
+        </div>
+        
+        <div class="dropdown">
+            <label for="department">القسم</label>
+            <select id="department" onchange="displayGrades()">
+                <option value="">اختر قسم</option>
+            </select>
+        </div>
+        
         <div id="result">
             <p id="zankoline-grade"></p>
             <p id="parallel-grade"></p>
         </div>
     </div>
-        <div id="notification" class="notification"></div> <!-- Message notification -->
-
     
+    <div id="notification" class="notification"></div> <!-- Message notification -->
+
     <!-- زر القائمة -->
-<div id="menu-button" class="menu-button">&#9776;</div>
+    <div id="menu-button" class="menu-button">&#9776;</div>
 
-<!-- القائمة الجانبية -->
-<div id="side-menu" class="side-menu">
-    <button data-url="https://ali99x.github.io/university/">معدلات الجامعات الحكومية ◄</button>
-<button data-url="https://ali99x.github.io/private/"> معدلات الجامعات الاهلية ◄</button>
- <button data-url="https://ali99x.github.io/college/">القسم حسب المعدل ◄</button>
-          <button data-url="https://ali99x.github.io/Pay/">اقساط الموازي / باراليل ◄</button>
-      <button data-url="https://ali99x.github.io/calculator/">  حاسبة معدل السادس ◄</button>
-<button data-url="https://ali99x.github.io/info2/"> توضيح الاقسام الجامعية ◄</button>
-          <button data-url="https://ali99x.github.io/info/">  معلومات وتوضيحات ◄</button>
-          <button data-url="https://ali99x.github.io/Me/">نبذة عن المطور  ◄</button>
-</div>
-
-
-<div class="overlay" id="overlay">
-    <div class="login-form" id="loginFormContainer">
-        <h1>تسجيل الدخول</h1>
-        <form id="loginForm">
-            <label for="password">كلمة المرور:</label>
-            <input type="password" id="password" required>
-            <label>
-         <input type="checkbox" id="rememberMe">تذكرني   
-</label>
-            <button type="submit">الدخول للموقع</button>
-        </form>
-<p><a href="https://t.me/ali_me09" id="telegramLink">اضغط هنا للحصول على كلمة المرور</a></p>
+    <!-- القائمة الجانبية -->
+    <div id="side-menu" class="side-menu">
+        <button data-url="https://ali99x.github.io/university/">معدلات الجامعات الحكومية ◄</button>
+        <button data-url="https://ali99x.github.io/private/"> معدلات الجامعات الاهلية ◄</button>
+        <button data-url="https://ali99x.github.io/college/">القسم حسب المعدل ◄</button>
+        <button data-url="https://ali99x.github.io/Pay/">اقساط الموازي / باراليل ◄</button>
+        <button data-url="https://ali99x.github.io/calculator/">  حاسبة معدل السادس ◄</button>
+        <button data-url="https://ali99x.github.io/info2/"> توضيح الاقسام الجامعية ◄</button>
+        <button data-url="https://ali99x.github.io/info/">  معلومات وتوضيحات ◄</button>
+        <button data-url="https://ali99x.github.io/Me/">نبذة عن المطور  ◄</button>
     </div>
-</div>
 
-<footer>
-<h8>2024 - © <a href="https://t.me/ali_me09" target="_blank">Ali</a> جميع الحقوق محفوظة للمطور</h8> 
-</footer>
+    <div class="overlay" id="overlay">
+        <div class="login-form" id="loginFormContainer">
+            <h1>تسجيل الدخول</h1>
+            <form id="loginForm">
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" required>
+                <label>
+                    <input type="checkbox" id="rememberMe">تذكرني   
+                </label>
+                <button type="submit">الدخول للموقع</button>
+            </form>
+            <p><a href="https://t.me/ali_me09" id="telegramLink">اضغط هنا للحصول على كلمة المرور</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <h8>2024 - © <a href="https://t.me/ali_me09" target="_blank">Ali</a> جميع الحقوق محفوظة للمطور</h8> 
+    </footer>
 
     <script src="script.js"></script>
 </body>
