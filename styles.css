@@ -117,23 +117,50 @@ select {
     box-sizing: border-box;
 }
 
- select {
-    background-image: url('https://i.ibb.co/vkdXfMz/down-arrow.png'); /* إضافة أيقونة السهم الخاصة بك */
-    background-repeat: no-repeat;
-    background-position: calc(100% - 220px) center; /* تحديد مكان الأيقونة */
-    background-size: 12px; /* حجم الأيقونة */
+
+/* Container for the select element */
+.dropdown {
+    position: relative;
+    width: 100%;
 }
-/* للتأكد من أن الأيقونة تعمل على جميع المتصفحات */
-select::-ms-expand {
-    display: none;
+
+/* Style for the select element */
+.dropdown select {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Space for the custom arrow on the left */
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: #fff; /* Background color of the select box */
+    appearance: none; /* Remove default arrow */
 }
-/* ضبط مكان السهم على الشاشات الصغيرة */
-@media (max-width: 800px) {
-    #info-select {
-        background: url('https://i.ibb.co/vkdXfMz/down-arrow.png') no-repeat;
-        background-position: right 10% center; /* تعديل موقع الأيقونة */
-    }
+
+/* Style for the custom arrow */
+.dropdown::before {
+    content: '▼'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 65%;
+    left: 15px; /* Adjust based on your design */
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure arrow doesn't interfere with clicking */
+    font-size: 10px; /* Adjust size if needed */
+    color: #333; /* Arrow color */
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 button {
     width: 100%;
