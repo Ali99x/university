@@ -7,6 +7,10 @@ body, html {
     align-items: center;
     overflow: hidden;
 }
+* {
+                cursor: url('https://i.ibb.co/RvKR9Q1/pen1.png'), auto; /* استخدم مسار الصورة الصحيح */
+
+}
 
 
 #city,
@@ -170,7 +174,6 @@ button {
     background-color: #4CAF50;
     color: white;
     font-size: 16px;
-    cursor: pointer;
     margin-top: 20px;
 }
 
@@ -257,7 +260,6 @@ body {
     top: 20px;
     right: 20px;
     font-size: 24px;
-    cursor: pointer;
     z-index: 1009;
     color: white;
     transition: transform 0.3s ease;
@@ -417,7 +419,6 @@ footer a:hover {
     background-color:#d90fb0;
     color: white;
     font-size: 16px;
-    cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s ease;
      text-align: center;
