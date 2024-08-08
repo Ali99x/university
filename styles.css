@@ -5,41 +5,55 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
     overflow: hidden;
 }
+
 * {
-                cursor: url('https://i.ibb.co/RvKR9Q1/pen1.png'), auto; /* استخدم مسار الصورة الصحيح */
-
+    cursor: url('https://i.ibb.co/RvKR9Q1/pen1.png'), auto;
 }
 
-
-#city,
-#university,
-#college ,
-#department {
-    color: black;
-    -webkit-appearance: none;
-}
-
-    /* منع تحديد النصوص */
 body {
-    user-select: none; /* لجميع المتصفحات الحديثة */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+/* شريط التمرير */
+::-webkit-scrollbar {
+    width: 4px; /* عرض الشريط */
 }
 
-/* خاصية لتصحيح عرض النصوص في بعض المتصفحات */
-body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* جميع المتصفحات الحديثة */
+/* مسار شريط التمرير */
+::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px; /* زوايا مستديرة للمسار */
+     margin-top: 2px;
+     margin-bottom: ;: 2px;
+
+
 }
+
+/* مسكة شريط التمرير */
+::-webkit-scrollbar-thumb {
+    background: #888; /* لون المسكة */
+    border-radius: 10px; /* زوايا مستديرة للمسكة */
+}
+
+/* مسكة شريط التمرير عند التمرير */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* لون المسكة عند التمرير */
+}
+
+
 
 .background {
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
+   background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
+   
     z-index: 0;
 }
 
@@ -47,213 +61,265 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: transparent;
 }
 
 .glass-container {
+    direction: rtl;
     position: relative;
     z-index: 1;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 22px;
-        -webkit-backdrop-filter: blur(4px);
+    padding: 20px;
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-        margin-bottom: 16px; /* المسافة بين الفوتر والمحتوى الذي فوقه */
-            direction: rtl; /* اتجاه النصوص بشكل عام من اليمين لليسار */
+    width: 92%;
+    max-width: 800px;
+    overflow: auto;
+    margin: 0 auto;
+    height: auto;
+    max-height: 68vh;
+    
+
+    
 }
-.glass-container label,
 
-.glass-container p {
-    margin: 1px 0; /* تقليص المسافة بين العناصر الداخلية */
-    padding: 1px; /* تقليص المسافة الداخلية للعناصر */
+/* Arrow tooltip style */
+#tooltip {
+    position: fixed;
+    top: 23px;
+    left: 57px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    font-size: 13px; /* حجم الكتابة المصغر */
+}
+
+/* Arrow pointer */
+#tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%; /* Change to 'left' if tooltip is on the right side */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.7) transparent transparent;
+}
+
+/* Show the tooltip */
+#tooltip.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 
+
+.highlight-red {
+    color: #ff8d85; /* لون النص عندما يكون المعدل غير مقبول */
+}
+
+
+h5 {
+    color: #fff;
+    margin-top: 1px;
+    margin-bottom: 0px;
+     font-size: 16px;
+     text-align: center;
+}
 
 h1 {
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+     font-size: 28px;
 }
-
-
- p {
-            font-weight: bold;
-            color: white;
-            font-size: 18px;
-            margin-top: 2px;
-
- }
-
-h2 {
-    color: #ff2ea4; /* اللون الأصفر */
-    font-size: 14px; /* حجم الخط أصغر */
-    background: rgba(0, 0, 0, 0.1); /* خلفية خفيفة */
-    padding: 10px; /* إضافة حواف للعنوان */
-    border-radius: 5px; /* زوايا دائرية للخلفية */
-    margin-bottom: 15px; /* مسافة سفلية */
-      margin-top: 0px; /* مسافة سفلية */
-}
-
-h8 {
-
-  color: white;
-
-}
-
-
 
 label {
     display: block;
     color: #fff;
-    margin-top: 10px;
+    margin-bottom: 8px;
 }
-
 
 select {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 5px;
+    margin: 1px 0;
     border: none;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
+select::-ms-expand {
+    display: none;
+}
 
-/* Container for the select element */
 .dropdown {
     position: relative;
     width: 100%;
+    margin-bottom: 10px;
 }
 
-/* Style for the select element */
 .dropdown select {
     width: 100%;
-    padding: 10px;
-    padding-left: 40px; /* Space for the custom arrow on the left */
-    margin: 10px 0;
+    padding: 8px;
+    padding-left: 40px;
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 16px;
-    background: #fff; /* Background color of the select box */
-    appearance: none; /* Remove default arrow */
+    font-size: 14px;
+    background: #fff;
+    appearance: none;
 }
 
-/* Style for the custom arrow */
 .dropdown::before {
-    content: '▼'; /* Unicode character for down arrow */
+    content: '▼';
     position: absolute;
-    top: 66%;
-    left: 15px; /* Adjust based on your design */
+    top: 50%;
+    left: 15px;
     transform: translateY(-50%);
-    pointer-events: none; /* Ensure arrow doesn't interfere with clicking */
-    font-size: 10px; /* Adjust size if needed */
-    color: #333; /* Arrow color */
+    pointer-events: none;
+    font-size: 10px;
+    color: #333;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    margin-top: 20px;
+  display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: rgba(0, 120, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #064f4e;
+     transform: translateY(-2px);
 }
 
-.bounce {
-    animation: bounce 0.3s ease;
+h2 {
+    color: #ff2ea4;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.fade-in {
-    animation: fadeIn 0.5s ease;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #fff;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
+table, th, td {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #1890db;
 }
 
 
-@keyframes fadeIn {
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+     z-index: 1009;
+}
+
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+   background: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    animation: popupAnimation 0.1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     width: 74%;
+    max-width: 800px;
+}
+
+@keyframes popupAnimation {
     from {
+        transform: translateY(-20px);
         opacity: 0;
     }
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-.notification {
-    position: fixed;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.9);
+.close-btn {
+    position: absolute;
+    top: 3px;
+    right: 12px;
+    font-size: 26px;
     color: #fff;
-    padding: 15px ;
-    border-radius: 8px;
-    font-size: 14px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1909;
-    transition: top 0.5s ease;
- 
 }
 
-@keyframes slideDownUp {
-    0% {
-        top: -100px;
-    }
-    20% {
-        top: 20px;
-    }
-    80% {
-        top: 20px;
-    }
-    99% {
-        top: -100px;
-    }
-    100% {
-        top: -120px;
-    }
+h6 { margin: 0 0 10px 0; 
+font-size: 16px; 
+ color: #ff2ea4;
+  
 }
 
-
-.notification.show {
-    animation: slideDownUp 3s ease;
-}
-
-body {
-    animation: fadeInFromTop 2s ease-out;
-}
 
 .menu-button {
     position: fixed;
@@ -292,7 +358,7 @@ body {
     padding: 12px 20px;
     background-color: transparent;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     text-align: right;
     border: none;
     border-bottom: 1px solid #555;
@@ -300,166 +366,53 @@ body {
 }
 
 .side-menu button:hover {
-    background-color: #555;
+    background-color: #ffc400;
 }
 
-footer {
+
+.notification {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    color: #1890db;
-}
-
-/* الخلفية الضبابية */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1099;
-}
-
-/* تحسين تنسيق نموذج تسجيل الدخول */
-.login-form {
-    position: fixed; /* تأكيد على التثبيت فوق كل العناصر */
-    top: 50%;
+    top: -100px; /* Start above the viewport */
     left: 50%;
-    transform: translate(-50%, -50%); /* توسيط النموذج */
-    z-index: 1001; /* تأكيد أن النموذج فوق كل العناصر */
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 18px;
-   
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-align: auto;
-    width: 250px; /* عرض ثابت لنموذج تسجيل الدخول */
-    margin: 0 auto; /* توسيط النموذج */
-    direction: rtl; /* اتجاه النصوص بشكل عام من اليمين لليسار */
-}
-
-
-.login-form h1 {
-    color: #000000;
-    margin-bottom: 20px;
-    font-size: 24px; /* حجم أكبر لعنوان النموذج */
-     text-align: center;
-}
-
-.login-form label {
-    display: block;
-    color: #000000;
-    margin-top: 10px;
-    font-size: 16px; /* حجم خط أكبر للتسمية */
-}
-
-.login-form input[type="password"] {
-    width: calc(100% - 20px); /* عرض الحقل مع هامش */
-    padding: 8px;
-    border: none;
-    border-radius: 3px;
-    background: rgba(212, 212, 212, 0.9);
-    color: black;
-    font-size: 16px; /* حجم خط مناسب */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-top: 7px;
-}
-
-
-
-
-.login-form input[type="checkbox"] {
-    margin-left: 10px; /* مسافة بين الصندوق والنص */
-   
-} 
-
-
-
-/* تحسين مظهر الصندوق عند التحديد */
-.login-form input[type="checkbox"]:checked {
-    background-color: #5c0e3b; /* تغيير الخلفية عند التحديد */
-    border: 2px solid #5c0e3b; /* تأكيد الحدود عند التحديد */
-}
-
-
-
-
-
-
-
-
-
-
-.login-form button {
-    width: 100%;
-    padding: 10px;
-    position: relative;
-    border: none;
-    border-radius: 4px;
-    background-color:#d90fb0;
-    color: white;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-     text-align: center;
-      display: block; /* التأكد من أن الزر يعرض ككتلة منفصلة */
-    text-align: center; /* توسيط النص داخل الزر */
-}
-
-.login-form button:hover {
-    background-color: #941692;
-}
-
-.login-form p {
-    margin-top: 18px;
-    font-size: 14px;
+    transform: translateX(-50%);
+    background-color: #2e2e2e;
     color: #fff;
-     text-align: center;
-
+    padding: 13px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    z-index: 1900;
+    opacity: 0;
+    animation: slideDown 0.5s forwards;
 }
 
-
-.login-form a {
-    color: #000000; /* لون مميز للرابط */
-    text-decoration: none;
-     text-decoration: underline;
-  text-decoration-color: #696969
+.notification.hide {
+    animation: slideUp 0.5s forwards;
 }
 
-.login-form a:hover {
-    text-decoration: underline;
-    color: #ff0095; /* لون أفتح عند التمرير فوق الرابط */
+@keyframes slideDown {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 15px;
+        opacity: 1;
+    }
 }
 
-
-
-@keyframes blink {
-  0% { color: #ffff87; }
-  100% { color: white; }
+@keyframes slideUp {
+    from {
+        top: 15px;
+        opacity: 1;
+    }
+    to {
+        top: -110px;
+        opacity: 0;
+    }
 }
 
-.blink-effect {
-  animation: blink 1s ease-in-out forwards;
+/* Define the transformation effect */
+.rotate-scale {
+    transform: rotate(180deg);
 }
-
 
