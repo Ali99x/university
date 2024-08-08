@@ -13,63 +13,116 @@
     <link rel="icon" href="https://i.ibb.co/gMjxk2Q/graduation-cap.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معدل الجامعات الحكومية</title>
-    <link rel="stylesheet" href="styles.css">
+<title>معدلات سنة 2023-2024</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background">
-        <div class="stars"></div>
-    </div>
+    <div class="background"></div>
+    <div class="stars"></div>
     <div class="glass-container">
-        <h1>معدلات الجامعات</h1>
-        <h2>ان المعدلات افتراضية تعتمد السنة السابقة 23-24</h2>
-        
+     
+     <h1>معدلات الجامعات الحكومية</h1>
+
+<h2>ان المعدلات افتراضية تعتمد السنوات السابقة 23-24</h2>
+              
+        <!-- اختيار المدينة -->
+        <label for="city-select">اختر المدينة:</label>
         <div class="dropdown">
-            <label for="city">المدينة</label>
-            <select id="city" onchange="updateUniversities()">
-                <option value="">اختر مدينة</option>
-                <option value="sulaymaniyah">السليمانية</option>
-                <option value="erbil">اربيل</option>
-                <option value="Duhok">دهوك</option>
-                <option value="Halabja">حلبجة</option>
-                <!-- إضافة المزيد من المدن هنا -->
+            <select id="city-select">
+                <option value="">-- اختر مدينة --</option>
+<option value="erbil">مدينة أربيل</option>
+<option value="sul">مدينة السليمانية</option>
+<option value="duhok">مدينة دهوك</option>
+<option value="halabja">مدينة حلبجة</option>
+                <!-- يمكنك إضافة المزيد من المدن هنا -->
+            </select>
+        </div>
+
+        <!-- اختيار الجامعة -->
+        <label for="university-select">اختر الجامعة:</label>
+        <div class="dropdown">
+            <select id="university-select" disabled>
+                <option value="">-- اختر جامعة --</option>
+                <!-- الخيارات سيتم ملؤها ديناميكياً بواسطة JavaScript -->
+            </select>
+        </div>
+
+        <!-- اختيار الكلية -->
+        <label for="college-select">اختر الكلية:</label>
+        <div class="dropdown">
+            <select id="college-select" disabled>
+                <option value="">-- اختر كلية --</option>
+                <!-- الخيارات سيتم ملؤها ديناميكياً بواسطة JavaScript -->
             </select>
         </div>
         
-        <div class="dropdown">
-            <label for="university">الجامعة</label>
-            <select id="university" onchange="updateColleges()">
-                <option value="">اختر جامعة</option>
-            </select>
-        </div>
-        
-        <div class="dropdown">
-            <label for="college">الكلية</label>
-            <select id="college" onchange="updateDepartments()">
-                <option value="">اختر كلية</option>
-            </select>
-        </div>
-        
-        <div class="dropdown">
-            <label for="department">القسم</label>
-            <select id="department" onchange="displayGrades()">
-                <option value="">اختر قسم</option>
-            </select>
-        </div>
-        
-        <div id="result">
-            <p id="zankoline-grade"></p>
-            <p id="parallel-grade"></p>
+        <button id="show-data-btn" disabled>عرض البيانات ▷</button>
+
+        <div id="data-table-container" style="display: none;">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>القسم</th>
+                      
+                       <th>زانكولاين</th>
+                      
+                     
+                        <th>موازي</th>
+                          <th>مسائي</th>
+                    </tr>
+                </thead>
+                <tbody id="data-body">
+                    <!-- البيانات ستظهر هنا -->
+                </tbody>
+            </table>
         </div>
     </div>
-    
-    <div id="notification" class="notification"></div> <!-- Message notification -->
 
-    <!-- زر القائمة -->
+
+    
+    <footer>
+        <p>2024 - © <a href="https://t.me/ali_me09" target="_blank">Ali</a> جميع الحقوق محفوظة للمطور</p>
+    </footer>
+
+<!-- أيقونة إدخال المعدل -->
+<div id="grade-container" style="position: fixed; top: 23px; left: 20px;">
+
+<img id="grade-icon" src="https://i.postimg.cc/rmKd4CKB/image-1.png" alt="Grade Icon" style="
+    cursor: pointer; 
+    width: 24px; 
+    height: 24px; 
+    transition: transform 0.5s ease;
+
+">
+
+
+</div>
+
+<!-- نموذج إدخال المعدل -->
+<div id="grade-popup" style="display: none; position: fixed; top: 60px; left: 20px; background: rgba(0, 0, 0, 0.7); padding: 13px; border-radius: 6px; color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;">
+<h5>:ادخل معدلك</h5>
+    <input id="grade-input" type="number" min="50" max="100" style="padding: 5px; border-radius: 5px; border: none;">
+<button id="save-grade-btn" style="
+    margin-top: 10px; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #720da8; 
+    color: #fff; 
+
+">حفظ</button>
+
+
+
+
+</div>
+    
+ <!-- زر القائمة -->
     <div id="menu-button" class="menu-button">&#9776;</div>
 
-     <!-- القائمة الجانبية -->
-     <div id="side-menu" class="side-menu">
+    <!-- القائمة الجانبية -->
+   <div id="side-menu" class="side-menu">
       <button data-url="https://ali99x.github.io/2025/">معدلات سنة 2024-2025 ◄</button>
       <button data-url="https://ali99x.github.io/university/">معدلات سنة 2023-2024 ◄</button>
       <button data-url="https://ali99x.github.io/2023/">2023-2022 معدلات سنة ◄</button>
@@ -81,26 +134,19 @@
         <button data-url="https://ali99x.github.io/info/">معلومات وتوضيحات ◄</button>
         <button data-url="https://ali99x.github.io/Me/">نبذة عن المطور ◄</button>
     </div>
+    <div id="overlay" class="overlay">
+        <div class="popup">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h6>! ملاحظة هامة</h6>
 
-    <div class="overlay" id="overlay">
-        <div class="login-form" id="loginFormContainer">
-            <h1>تسجيل الدخول</h1>
-            <form id="loginForm">
-                <label for="password">كلمة المرور:</label>
-                <input type="password" id="password" required>
-                <label>
-                    <input type="checkbox" id="rememberMe">تذكرني   
-                </label>
-                <button type="submit">الدخول للموقع</button>
-            </form>
-            <p><a href="https://t.me/ali_me09" id="telegramLink">اضغط هنا للحصول على كلمة المرور</a></p>
+<p>.ان هذه المعدلات السابقة فهي للسنوات  2023-2024 لذالك يرجى الانتباه</p>
+
+<p> هذه <span style="color: yellow; font-weight: bold;">أحدث المعدلات</span> المتوفرة من قبل الوزارة</p>
+
         </div>
     </div>
-
-    <footer>
-        <h8>2024 - © <a href="https://t.me/ali_me09" target="_blank">Ali</a> جميع الحقوق محفوظة للمطور</h8> 
-    </footer>
-
+<!-- Tooltip message -->
+<div id="tooltip">يمكنك إدخال معدلك هنا</div>
     <script src="script.js"></script>
 </body>
 </html>
