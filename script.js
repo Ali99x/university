@@ -4083,5 +4083,5 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             tooltip.classList.remove('show');
         }, 3000);
-    }, 9999);
+    }, 13000);
 });
