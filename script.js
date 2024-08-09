@@ -3835,7 +3835,7 @@ const data = {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const tooltip = document.getElementById('tooltip');
+    const tooltip = document.getElementById('tooltip2');
 
     // Show the tooltip after 5 seconds
     setTimeout(() => {
@@ -3845,7 +3845,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             tooltip.classList.remove('show');
         }, 3000);
-    }, 5000);
+    }, 25000);
 });
 
 
@@ -4073,7 +4073,7 @@ function showNotification(message) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const tooltip = document.getElementById('tooltip2');
+    const tooltip = document.getElementById('tooltip');
 
     // Show the tooltip after 5 seconds
     setTimeout(() => {
@@ -4083,5 +4083,5 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             tooltip.classList.remove('show');
         }, 3000);
-    }, 13000);
+    }, 14000);
 });
