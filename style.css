@@ -1,456 +1,159 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="ar">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHWEKEX8WE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-* {
-    cursor: url('https://i.ibb.co/RvKR9Q1/pen1.png'), auto;
-}
+  gtag('config', 'G-SHWEKEX8WE');
+</script>
+<head>
+    <link rel="icon" href="https://i.ibb.co/gMjxk2Q/graduation-cap.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معدلات سنة 2023-2024</title>
 
-body {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-/* شريط التمرير */
-::-webkit-scrollbar {
-    width: 4px; /* عرض الشريط */
-}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="stars"></div>
+    <div class="glass-container">
+     
+     <h1>معدلات الجامعات الحكومية</h1>
 
-/* مسار شريط التمرير */
-::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.1);
+<h2>ان المعدلات افتراضية تعتمد السنوات السابقة 23-24</h2>
+              
+        <!-- اختيار المدينة -->
+        <label for="city-select">اختر المدينة:</label>
+        <div class="dropdown">
+            <select id="city-select">
+                <option value="">-- اختر مدينة --</option>
+<option value="erbil">مدينة أربيل</option>
+<option value="sul">مدينة السليمانية</option>
+<option value="duhok">مدينة دهوك</option>
+<option value="halabja">مدينة حلبجة</option>
+                <!-- يمكنك إضافة المزيد من المدن هنا -->
+            </select>
+        </div>
 
-    border-radius: 8px; /* زوايا مستديرة للمسار */
-     margin-top: 2px;
-     margin-bottom: ;: 2px;
+        <!-- اختيار الجامعة -->
+        <label for="university-select">اختر الجامعة:</label>
+        <div class="dropdown">
+            <select id="university-select" disabled>
+                <option value="">-- اختر جامعة --</option>
+                <!-- الخيارات سيتم ملؤها ديناميكياً بواسطة JavaScript -->
+            </select>
+        </div>
 
+        <!-- اختيار الكلية -->
+        <label for="college-select">اختر الكلية:</label>
+        <div class="dropdown">
+            <select id="college-select" disabled>
+                <option value="">-- اختر كلية --</option>
+                <!-- الخيارات سيتم ملؤها ديناميكياً بواسطة JavaScript -->
+            </select>
+        </div>
+        
+        <button id="show-data-btn" disabled>عرض البيانات ▷</button>
 
-}
+        <div id="data-table-container" style="display: none;">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>القسم</th>
+                      
+                       <th>زانكولاين</th>
+                      
+                     
+                        <th>موازي</th>
+                          <th>مسائي</th>
+                    </tr>
+                </thead>
+                <tbody id="data-body">
+                    <!-- البيانات ستظهر هنا -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-/* مسكة شريط التمرير */
-::-webkit-scrollbar-thumb {
-    background: #888; /* لون المسكة */
-    border-radius: 10px; /* زوايا مستديرة للمسكة */
-}
-
-/* مسكة شريط التمرير عند التمرير */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* لون المسكة عند التمرير */
-}
-
-
-
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-   background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-   
-    z-index: 0;
-}
-
-.stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.glass-container {
-    direction: rtl;
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-    width: 92%;
-    max-width: 800px;
-    overflow: auto;
-    margin: 0 auto;
-    height: auto;
-    max-height: 68vh;
-    
 
     
-}
+    <footer>
+        <p>2024 - © <a href="https://t.me/me_ali99" target="_blank">Ali</a> جميع الحقوق محفوظة للمطور</p>
+    </footer>
 
-/* Arrow tooltip style */
-#tooltip {
-    position: fixed;
-    top: 23px;
-    left: 57px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    font-size: 13px; /* حجم الكتابة المصغر */
-}
+<!-- أيقونة إدخال المعدل -->
+<div id="grade-container" style="position: fixed; top: 23px; left: 20px;">
 
-/* Arrow pointer */
-#tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 100%; /* Change to 'left' if tooltip is on the right side */
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent rgba(0, 0, 0, 0.7) transparent transparent;
-}
+<img id="grade-icon" src="https://i.postimg.cc/rmKd4CKB/image-1.png" alt="Grade Icon" style="
+    cursor: pointer; 
+    width: 24px; 
+    height: 24px; 
+    transition: transform 0.5s ease;
 
-/* Show the tooltip */
-#tooltip.show {
-    opacity: 1;
-    visibility: visible;
-}
+">
+
+
+</div>
+
+<!-- نموذج إدخال المعدل -->
+<div id="grade-popup" style="display: none; position: fixed; top: 60px; left: 20px; background: rgba(0, 0, 0, 0.7); padding: 13px; border-radius: 6px; color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;">
+<h5>:ادخل معدلك</h5>
+    <input id="grade-input" type="number" min="50" max="100" style="padding: 5px; border-radius: 5px; border: none;">
+<button id="save-grade-btn" style="
+    margin-top: 10px; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #720da8; 
+    color: #fff; 
+
+">حفظ</button>
 
 
 
-.highlight-red {
-    color: #ff8d85; /* لون النص عندما يكون المعدل غير مقبول */
-}
+</div>
+    
+ <!-- زر القائمة -->
+    <div id="menu-button" class="menu-button">&#9776;</div>
+
+  <!-- القائمة الجانبية -->
+   <div id="side-menu" class="side-menu">
+      
+      <button data-url="https://zanko1.netlify.app/">معدلات سنة 2023-2024 ◄</button>
+      <button data-url="https://zanko2.netlify.app/">2023-2022 معدلات سنة ◄</button>
+                     <button data-url="https://zanko3.netlify.app/">القسم حسب المعدل ◄</button>
+        <button data-url="https://zanko4.netlify.app/">معدلات الجامعات الاهلية ◄</button>
+        <button data-url="https://zanko5.netlify.app/">اقساط الموازي / باراليل ◄</button>
+        <button data-url="https://zanko6.netlify.app/">حاسبة معدل السادس ◄</button>
+        <button data-url="https://zanko8.netlify.app/">توضيح الاقسام الجامعية ◄</button>
+        <button data-url="https://zanko7.netlify.app/">معلومات وتوضيحات ◄</button>
+        <button data-url="https://zanko9.netlify.app/">نبذة عن المطور ◄</button>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div class="popup">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h6>! ملاحظة</h6>
+
+<p>تجد هنا احدث البيانات لسنة 24-23</p>
+
+<p> هذه <span style="color: yellow; font-weight: bold;">أحدث المعدلات</span> المتوفرة من قبل الوزارة</p>
+
+        </div>
+    </div>
+<!-- Tooltip message -->
+<div id="tooltip">يمكنك إدخال معدلك هنا</div>
 
 
-h5 {
-    color: #fff;
-    margin-top: 1px;
-    margin-bottom: 0px;
-     font-size: 16px;
-     text-align: center;
-}
-
-h1 {
-    color: #fff;
-    margin-bottom: 15px;
-     font-size: 28px;
-}
-
-label {
-    display: block;
-    color: #fff;
-    margin-bottom: 8px;
-}
-
-select {
-    width: 100%;
-    padding: 5px;
-    margin: 1px 0;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-select::-ms-expand {
-    display: none;
-}
-
-.dropdown {
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.dropdown select {
-    width: 100%;
-    padding: 8px;
-    padding-left: 40px;
-    border: none;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
-    background: #fff;
-    appearance: none;
-}
-
-.dropdown::before {
-    content: '▼';
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-size: 10px;
-    color: #333;
-}
-
-button {
-  display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 3px;
-            background-color: rgba(94, 27, 122, 0.4);
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-button:hover {
-    background-color: #4a0f63;
-     transform: translateY(-1px);
-}
-
-h2 {
-    color: #ff2ea4;
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    color: #fff;
-}
-
-table, th, td {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #1890db;
-}
+    </div>
+<!-- Tooltip message -->
+<div id="tooltip2">للمزيد اِضغط هنا</div>
 
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-     z-index: 1009;
-}
-
-.overlay.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.popup {
-   background: #222;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    animation: popupAnimation 0.1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-     width: 74%;
-    max-width: 800px;
-}
-
-@keyframes popupAnimation {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.close-btn {
-    position: absolute;
-    top: 3px;
-    right: 12px;
-    font-size: 26px;
-    color: #fff;
-}
-
-h6 { margin: 0 0 10px 0; 
-font-size: 16px; 
- color: #ff2ea4;
-  
-}
-
-
-.menu-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    z-index: 1009;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.menu-button.clicked {
-    transform: rotate(180deg) scale(1.1);
-}
-       
-
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding-top: 50px;
-    transition: right 0.3s ease;
-    z-index: 1000;
-}
-
-.side-menu.open {
-    right: 0;
-}
-
-.side-menu button {
-    display: block;
-    width: 100%;
-    padding: 12px 20px;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    text-align: right;
-    border: none;
-    border-bottom: 1px solid #555;
-    transition: background-color 0.3s ease;
-}
-
-.side-menu button:hover {
-    background-color: #6e6e6e;
-}
-
-
-
-.notification {
-    position: fixed;
-    top: -100px; /* Start above the viewport */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #2e2e2e;
-    color: #fff;
-    padding: 13px;
-    border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    z-index: 1900;
-    opacity: 0;
-    animation: slideDown 0.5s forwards;
-}
-
-.notification.hide {
-    animation: slideUp 0.5s forwards;
-}
-
-@keyframes slideDown {
-    from {
-        top: -100px;
-        opacity: 0;
-    }
-    to {
-        top: 15px;
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        top: 15px;
-        opacity: 1;
-    }
-    to {
-        top: -110px;
-        opacity: 0;
-    }
-}
-
-/* Define the transformation effect */
-.rotate-scale {
-    transform: rotate(180deg);
-}
-
-/* Arrow tooltip style */
-#tooltip2 {
-    position: fixed;
-    top: 22px;
-    right: 55px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    font-size: 13px; /* حجم الكتابة المصغر */
-}
-
-/* Arrow pointer */
-#tooltip2::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100%; /* Move the arrow to the right side */
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent rgba(0, 0, 0, 0.7); /* Arrow color matches background */
-}
-
-/* Show the tooltip */
-#tooltip2.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-
+    <script src="script.js"></script>
+</body>
+</html>
