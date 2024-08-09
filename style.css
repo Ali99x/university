@@ -200,7 +200,7 @@ button {
             padding: 8px 20px;
             border: none;
             border-radius: 3px;
-            background-color: rgba(0, 120, 255, 0.1);
+            background-color: rgba(94, 27, 122, 0.4);
             color: white;
             text-decoration: none;
             font-size: 14px;
@@ -211,8 +211,8 @@ button {
 }
 
 button:hover {
-    background-color: #064f4e;
-     transform: translateY(-2px);
+    background-color: #4a0f63;
+     transform: translateY(-1px);
 }
 
 h2 {
@@ -416,10 +416,6 @@ font-size: 16px;
     transform: rotate(180deg);
 }
 
-
-
-
-
 /* Arrow tooltip style */
 #tooltip2 {
     position: fixed;
@@ -454,4 +450,6 @@ font-size: 16px;
     opacity: 1;
     visibility: visible;
 }
+
+
 
